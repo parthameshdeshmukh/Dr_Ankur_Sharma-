@@ -1,0 +1,419 @@
+/* Dark Glassmorphism Theme & Animation Suite for Dr. Ankur Sharma Physiotherapy */
+:root {
+  --bg-dark: #050b0a;
+  --bg-card: rgba(14, 28, 25, 0.7);
+  --bg-card-hover: rgba(20, 38, 34, 0.9);
+  --bg-card-border: rgba(0, 230, 153, 0.18);
+  --bg-card-border-glow: rgba(0, 230, 153, 0.5);
+  
+  --primary-emerald: #00e699;
+  --primary-emerald-hover: #00ffaa;
+  --primary-emerald-glow: rgba(0, 230, 153, 0.3);
+  --primary-emerald-dark: #00885b;
+  
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-subtle: #64748b;
+  
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-full: 9999px;
+  
+  --shadow-glow: 0 10px 35px -5px rgba(0, 230, 153, 0.25);
+  --shadow-card: 0 14px 40px -10px rgba(0, 0, 0, 0.6);
+  
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Typography Defaults */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--text-main);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+/* Glassmorphism Cards */
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--bg-card-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card:hover {
+  border-color: var(--bg-card-border-glow);
+  box-shadow: var(--shadow-glow);
+  background: var(--bg-card-hover);
+  transform: translateY(-5px);
+}
+
+/* Distinct Card Variants */
+
+/* 1. Service Cards - Equal Height Structure */
+.card-service {
+  background: linear-gradient(180deg, rgba(16, 32, 28, 0.8) 0%, rgba(10, 20, 18, 0.95) 100%);
+  border: 1px solid rgba(0, 230, 153, 0.2);
+  border-radius: 20px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  box-sizing: border-box;
+  transition: all var(--transition-normal);
+}
+
+.card-service:hover {
+  border-color: var(--primary-emerald);
+  box-shadow: 0 12px 35px rgba(0, 230, 153, 0.2);
+  transform: translateY(-6px);
+}
+
+/* 2. Case Study Cards - Clinical Diagnostic Styling */
+.card-case-study {
+  background: rgba(10, 22, 19, 0.85);
+  border: 1px solid rgba(0, 230, 153, 0.22);
+  border-left: 4px solid var(--primary-emerald);
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  box-sizing: border-box;
+  transition: all var(--transition-normal);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.card-case-study:hover {
+  border-color: var(--primary-emerald);
+  box-shadow: 0 14px 40px rgba(0, 230, 153, 0.25);
+  transform: translateY(-5px);
+}
+
+/* 3. Blog Cards - Editorial Magazine Styling */
+.card-blog-post {
+  background: rgba(12, 24, 21, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  box-sizing: border-box;
+  transition: all var(--transition-normal);
+}
+
+.card-blog-post:hover {
+  border-color: rgba(0, 230, 153, 0.4);
+  background: rgba(16, 32, 28, 0.9);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+  transform: translateY(-5px);
+}
+
+/* Glass Pill Badges */
+.glass-pill {
+  background: rgba(0, 230, 153, 0.12);
+  border: 1px solid rgba(0, 230, 153, 0.3);
+  color: var(--primary-emerald);
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  box-shadow: 0 0 15px rgba(0, 230, 153, 0.1);
+  transition: all var(--transition-fast);
+}
+
+.glass-pill:hover {
+  background: rgba(0, 230, 153, 0.2);
+  transform: scale(1.02);
+}
+
+/* Buttons */
+.btn-emerald {
+  background: var(--primary-emerald);
+  color: #04100c;
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 20px rgba(0, 230, 153, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-emerald:hover {
+  background: var(--primary-emerald-hover);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(0, 230, 153, 0.5);
+}
+
+.btn-emerald:active {
+  transform: translateY(0) scale(1);
+}
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text-main);
+  font-weight: 600;
+  padding: 12px 26px;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.btn-outline-emerald {
+  background: transparent;
+  border: 1px solid var(--primary-emerald);
+  color: var(--primary-emerald);
+  font-weight: 700;
+  padding: 10px 22px;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.btn-outline-emerald:hover {
+  background: rgba(0, 230, 153, 0.15);
+  box-shadow: 0 0 20px rgba(0, 230, 153, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Layout Containers & Grids */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+}
+
+.section-padding {
+  padding: 88px 0;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 52px 0;
+  }
+}
+
+/* Precise Grid Layout Utilities */
+.grid-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+@media (max-width: 1200px) {
+  .grid-5 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .grid-5, .grid-4, .grid-3, .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Section Header Style */
+.section-header {
+  margin-bottom: 48px;
+  text-align: left;
+}
+
+.section-header.center {
+  text-align: center;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  margin-top: 12px;
+  letter-spacing: -0.5px;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin-top: 10px;
+  max-width: 650px;
+  line-height: 1.6;
+}
+
+.section-header.center .section-subtitle {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050b0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #142a24;
+  border-radius: 5px;
+  border: 2px solid #050b0a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-emerald-dark);
+}
+
+/* Advanced Keyframe Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+}
+
+.animate-float {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 230, 153, 0.25); }
+  50% { box-shadow: 0 0 40px rgba(0, 230, 153, 0.55); }
+}
+
+.pulse-glow {
+  animation: pulseGlow 3s infinite ease-in-out;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: 200%;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
