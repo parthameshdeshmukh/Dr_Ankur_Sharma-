@@ -1,13 +1,13 @@
 import React from 'react';
-import { 
-  Activity, 
-  Trophy, 
-  Heart, 
-  Shield, 
-  ArrowRight, 
-  Play, 
-  Calendar, 
-  Check, 
+import {
+  Activity,
+  Trophy,
+  Heart,
+  Shield,
+  ArrowRight,
+  Play,
+  Calendar,
+  Check,
   Award,
   ChevronRight,
   ChevronLeft,
@@ -17,46 +17,46 @@ import {
   User,
   ArrowUpRight
 } from 'lucide-react';
-import { 
-  doctorInfo, 
-  stats, 
-  partners, 
-  services, 
-  caseStudies, 
-  pastEvents, 
-  testimonials, 
+import {
+  doctorInfo,
+  stats,
+  partners,
+  services,
+  caseStudies,
+  pastEvents,
+  testimonials,
   blogPosts,
-  journeyPictures 
+  journeyPictures
 } from '../data/websiteData';
 
-export default function HomePage({ 
-  setActiveTab, 
-  openBookingModal, 
-  openVideoModal, 
+export default function HomePage({
+  setActiveTab,
+  openBookingModal,
+  openVideoModal,
   setSelectedCaseStudy,
   setSelectedService,
-  setSelectedBlogPost 
+  setSelectedBlogPost
 }) {
   return (
     <div className="animate-fade-in" style={{ display: 'flex', flexDirection: 'column' }}>
-      
+
       {/* 01. HERO SECTION */}
-      <section 
-        style={{ 
-          position: 'relative', 
-          paddingTop: '64px', 
+      <section
+        style={{
+          position: 'relative',
+          paddingTop: '64px',
           paddingBottom: '88px',
           overflow: 'hidden',
           background: 'radial-gradient(circle at 75% 25%, rgba(0, 230, 153, 0.15) 0%, rgba(5, 11, 10, 0) 65%)'
         }}
       >
         <div className="container">
-          <div 
-            style={{ 
-              display: 'grid', 
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', 
-              gap: '48px', 
-              alignItems: 'center' 
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+              gap: '48px',
+              alignItems: 'center'
             }}
           >
             {/* Left Hero Content */}
@@ -64,11 +64,11 @@ export default function HomePage({
               <div className="glass-pill" style={{ fontSize: '0.8rem', padding: '6px 16px' }}>
                 <Sparkles size={14} /> SPORTS & MUSCULOSKELETAL PHYSIOTHERAPIST
               </div>
-              
-              <h1 
-                style={{ 
-                  fontSize: 'clamp(2.8rem, 5.5vw, 4.5rem)', 
-                  fontWeight: 800, 
+
+              <h1
+                style={{
+                  fontSize: 'clamp(2.8rem, 5.5vw, 4.5rem)',
+                  fontWeight: 800,
                   lineHeight: '1.05',
                   color: '#fff',
                   letterSpacing: '-1.5px'
@@ -77,12 +77,12 @@ export default function HomePage({
                 {doctorInfo.name}
               </h1>
 
-              <h2 
-                style={{ 
-                  fontSize: 'clamp(1.3rem, 2.4vw, 1.85rem)', 
-                  fontWeight: 600, 
-                  color: '#e2e8f0', 
-                  lineHeight: '1.3' 
+              <h2
+                style={{
+                  fontSize: 'clamp(1.3rem, 2.4vw, 1.85rem)',
+                  fontWeight: 600,
+                  color: '#e2e8f0',
+                  lineHeight: '1.3'
                 }}
               >
                 {doctorInfo.tagline}
@@ -94,16 +94,16 @@ export default function HomePage({
 
               {/* Buttons & Cursive Tag */}
               <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '20px', marginTop: '12px' }}>
-                <button 
-                  onClick={() => openBookingModal()} 
+                <button
+                  onClick={() => openBookingModal()}
                   className="btn-emerald pulse-glow"
                   style={{ padding: '14px 32px', fontSize: '1rem' }}
                 >
                   Book Consultation
                 </button>
 
-                <button 
-                  onClick={() => openVideoModal()} 
+                <button
+                  onClick={() => openVideoModal()}
                   className="btn-ghost"
                   style={{ padding: '14px 28px', fontSize: '1rem' }}
                 >
@@ -111,7 +111,7 @@ export default function HomePage({
                 </button>
 
                 {/* Move Recover Perform cursive graphic tag */}
-                <div 
+                <div
                   style={{
                     fontFamily: "'Georgia', 'Brush Script MT', cursive",
                     fontSize: '1.5rem',
@@ -131,7 +131,7 @@ export default function HomePage({
 
             {/* Right Hero Doctor Image */}
             <div style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
-              <div 
+              <div
                 style={{
                   position: 'absolute',
                   inset: '-15px',
@@ -142,7 +142,7 @@ export default function HomePage({
                 }}
               />
 
-              <div 
+              <div
                 className="animate-float"
                 style={{
                   position: 'relative',
@@ -154,9 +154,9 @@ export default function HomePage({
                   overflow: 'hidden'
                 }}
               >
-                <img 
-                  src="/hero_doctor.jpg" 
-                  alt={doctorInfo.name} 
+                <img
+                  src="/hero_doctor.jpg"
+                  alt={doctorInfo.name}
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
               </div>
@@ -164,9 +164,9 @@ export default function HomePage({
           </div>
 
           {/* Stats Bar Container */}
-          <div 
+          <div
             className="glass-card"
-            style={{ 
+            style={{
               marginTop: '64px',
               padding: '24px 32px',
               display: 'grid',
@@ -178,11 +178,11 @@ export default function HomePage({
             }}
           >
             {stats.map((st, idx) => (
-              <div 
-                key={idx} 
-                style={{ 
-                  display: 'flex', 
-                  alignItems: 'baseline', 
+              <div
+                key={idx}
+                style={{
+                  display: 'flex',
+                  alignItems: 'baseline',
                   gap: '12px',
                   borderRight: idx < stats.length - 1 ? '1px solid rgba(255, 255, 255, 0.1)' : 'none',
                   paddingRight: '16px'
@@ -205,11 +205,11 @@ export default function HomePage({
         <div style={{ width: '100%', overflow: 'hidden' }}>
           <div className="animate-marquee" style={{ display: 'flex', gap: '60px', alignItems: 'center' }}>
             {[...partners, ...partners, ...partners].map((p, i) => (
-              <div 
-                key={i} 
-                style={{ 
-                  color: 'rgba(255, 255, 255, 0.55)', 
-                  fontWeight: 700, 
+              <div
+                key={i}
+                style={{
+                  color: 'rgba(255, 255, 255, 0.55)',
+                  fontWeight: 700,
                   fontSize: '0.95rem',
                   letterSpacing: '1px',
                   whiteSpace: 'nowrap',
@@ -263,7 +263,7 @@ export default function HomePage({
             </div>
 
             {/* Card 5: Watch My Journey Video Card */}
-            <div 
+            <div
               onClick={() => openVideoModal()}
               className="glass-card"
               style={{
@@ -280,7 +280,7 @@ export default function HomePage({
                 alt="Watch My Journey"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'brightness(0.35)' }}
               />
-              <div 
+              <div
                 style={{
                   position: 'absolute',
                   inset: 0,
@@ -295,7 +295,7 @@ export default function HomePage({
                   backdropFilter: 'blur(3px)'
                 }}
               >
-                <div 
+                <div
                   style={{
                     width: '52px',
                     height: '52px',
@@ -318,14 +318,14 @@ export default function HomePage({
           </div>
 
           {/* Partner Banner Below Gallery */}
-          <div 
-            className="glass-card" 
-            style={{ 
+          <div
+            className="glass-card"
+            style={{
               padding: '32px 36px',
               borderRadius: '20px',
-              display: 'flex', 
-              flexWrap: 'wrap', 
-              alignItems: 'center', 
+              display: 'flex',
+              flexWrap: 'wrap',
+              alignItems: 'center',
               justifyContent: 'space-between',
               gap: '24px',
               border: '1px solid rgba(0, 230, 153, 0.35)',
@@ -340,11 +340,11 @@ export default function HomePage({
                 I combine clinical expertise with real-world sports experience to help individuals return to the activities they love.
               </p>
             </div>
-            <button 
+            <button
               onClick={() => {
                 setActiveTab('about');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
-              }} 
+              }}
               className="btn-outline-emerald"
             >
               Know More About Me <ArrowRight size={16} />
@@ -384,7 +384,7 @@ export default function HomePage({
                     </div>
                   </div>
 
-                  <button 
+                  <button
                     onClick={() => {
                       setSelectedService(srv);
                       setActiveTab('service-detail');
@@ -433,11 +433,11 @@ export default function HomePage({
                 </div>
 
                 <div style={{ padding: '0 20px 20px 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                  <span 
-                    className="glass-pill" 
-                    style={{ 
-                      fontSize: '0.75rem', 
-                      padding: '4px 14px', 
+                  <span
+                    className="glass-pill"
+                    style={{
+                      fontSize: '0.75rem',
+                      padding: '4px 14px',
                       backgroundColor: c.category === 'Sports' ? 'rgba(59, 130, 246, 0.2)' : 'rgba(255, 255, 255, 0.1)',
                       borderColor: c.category === 'Sports' ? '#3b82f6' : 'rgba(255, 255, 255, 0.2)',
                       color: c.category === 'Sports' ? '#60a5fa' : '#fff'
@@ -446,7 +446,7 @@ export default function HomePage({
                     {c.category}
                   </span>
 
-                  <button 
+                  <button
                     onClick={() => setSelectedCaseStudy(c)}
                     style={{
                       width: '32px',
@@ -521,8 +521,8 @@ export default function HomePage({
 
           <div className="grid-3">
             {testimonials.map((t) => (
-              <div 
-                key={t.id} 
+              <div
+                key={t.id}
                 style={{
                   backgroundColor: 'rgba(255, 255, 255, 0.95)',
                   color: '#0f172a',
@@ -534,10 +534,10 @@ export default function HomePage({
                   boxShadow: '0 10px 30px rgba(0,0,0,0.5)'
                 }}
               >
-                <img 
-                  src={t.avatar} 
-                  alt={t.name} 
-                  style={{ width: '48px', height: '48px', borderRadius: '50%', objectFit: 'cover', flexShrink: 0 }} 
+                <img
+                  src={t.avatar}
+                  alt={t.name}
+                  style={{ width: '48px', height: '48px', borderRadius: '50%', objectFit: 'cover', flexShrink: 0 }}
                 />
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                   <p style={{ fontSize: '0.85rem', color: '#334155', lineHeight: '1.5' }}>
@@ -562,7 +562,7 @@ export default function HomePage({
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '28px', alignItems: 'start' }}>
-            
+
             {/* Left 2 Blog Cards */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '20px' }}>
               {blogPosts.slice(0, 2).map((post, idx) => (
@@ -599,7 +599,7 @@ export default function HomePage({
             </div>
 
             {/* Right Let's Work Together Banner */}
-            <div 
+            <div
               className="glass-card"
               style={{
                 padding: '36px',
@@ -617,8 +617,8 @@ export default function HomePage({
                   For consultations, sports events or collaborations, feel free to reach out.
                 </p>
 
-                <button 
-                  onClick={() => openBookingModal()} 
+                <button
+                  onClick={() => openBookingModal()}
                   className="btn-emerald"
                   style={{ width: '100%', justifyContent: 'center', padding: '14px', fontSize: '0.95rem' }}
                 >
@@ -627,7 +627,7 @@ export default function HomePage({
               </div>
 
               {/* Bottom Sub Box */}
-              <div 
+              <div
                 style={{
                   backgroundColor: 'rgba(0, 0, 0, 0.4)',
                   padding: '16px',
@@ -650,68 +650,6 @@ export default function HomePage({
               </div>
             </div>
 
-          </div>
-        </div>
-      </section>
-
-      {/* QUICK INQUIRY CATEGORIES */}
-      <section className="section-padding" style={{ backgroundColor: '#030807' }}>
-        <div className="container">
-          <div className="section-header">
-            <span className="glass-pill"><Sparkles size={14} /> Direct Engagement</span>
-            <h2 className="section-title" style={{ fontSize: '2.2rem' }}>Quick Inquiry Categories</h2>
-          </div>
-
-          <div className="grid-4">
-            {[
-              { title: "Clinic Consultation", icon: Activity, desc: "In-person assessment, manual therapy & targeted joint rehab." },
-              { title: "Sports Events", icon: Trophy, desc: "On-field injury management, acute triage & pitch-side coverage." },
-              { title: "Teams & Collaboration", icon: Users, desc: "Seasonal athletic conditioning, load monitoring & team rehab." },
-              { title: "Academic & Speaker Queries", icon: BookOpen, desc: "Guest lectures & workshops on biomechanics & injury prevention." }
-            ].map((iq) => {
-              const IconComp = iq.icon;
-              return (
-                <div 
-                  key={iq.title} 
-                  className="glass-card" 
-                  style={{ 
-                    padding: '28px', 
-                    borderRadius: '20px', 
-                    display: 'flex', 
-                    flexDirection: 'column', 
-                    justifyContent: 'space-between',
-                    gap: '16px',
-                    cursor: 'pointer'
-                  }}
-                  onClick={() => openBookingModal()}
-                >
-                  <div>
-                    <div 
-                      style={{ 
-                        width: '44px', 
-                        height: '44px', 
-                        borderRadius: '12px', 
-                        backgroundColor: 'rgba(0, 230, 153, 0.15)', 
-                        border: '1px solid var(--primary-emerald)',
-                        display: 'flex', 
-                        alignItems: 'center', 
-                        justifyContent: 'center', 
-                        color: 'var(--primary-emerald)', 
-                        marginBottom: '16px' 
-                      }}
-                    >
-                      <IconComp size={22} />
-                    </div>
-                    <h4 style={{ color: '#fff', fontSize: '1.15rem', marginBottom: '8px' }}>{iq.title}</h4>
-                    <p style={{ color: 'var(--text-muted)', fontSize: '0.86rem', lineHeight: '1.55' }}>{iq.desc}</p>
-                  </div>
-
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--primary-emerald)', fontWeight: 700, fontSize: '0.85rem' }}>
-                    Inquire Now <ArrowRight size={14} />
-                  </div>
-                </div>
-              );
-            })}
           </div>
         </div>
       </section>
