@@ -654,6 +654,68 @@ export default function HomePage({
         </div>
       </section>
 
+      {/* QUICK INQUIRY CATEGORIES */}
+      <section className="section-padding" style={{ backgroundColor: '#030807' }}>
+        <div className="container">
+          <div className="section-header">
+            <span className="glass-pill"><Sparkles size={14} /> Direct Engagement</span>
+            <h2 className="section-title" style={{ fontSize: '2.2rem' }}>Quick Inquiry Categories</h2>
+          </div>
+
+          <div className="grid-4">
+            {[
+              { title: "Clinic Consultation", icon: Activity, desc: "In-person assessment, manual therapy & targeted joint rehab." },
+              { title: "Sports Events", icon: Trophy, desc: "On-field injury management, acute triage & pitch-side coverage." },
+              { title: "Teams & Collaboration", icon: Users, desc: "Seasonal athletic conditioning, load monitoring & team rehab." },
+              { title: "Academic & Speaker Queries", icon: BookOpen, desc: "Guest lectures & workshops on biomechanics & injury prevention." }
+            ].map((iq) => {
+              const IconComp = iq.icon;
+              return (
+                <div 
+                  key={iq.title} 
+                  className="glass-card" 
+                  style={{ 
+                    padding: '28px', 
+                    borderRadius: '20px', 
+                    display: 'flex', 
+                    flexDirection: 'column', 
+                    justifyContent: 'space-between',
+                    gap: '16px',
+                    cursor: 'pointer'
+                  }}
+                  onClick={() => openBookingModal()}
+                >
+                  <div>
+                    <div 
+                      style={{ 
+                        width: '44px', 
+                        height: '44px', 
+                        borderRadius: '12px', 
+                        backgroundColor: 'rgba(0, 230, 153, 0.15)', 
+                        border: '1px solid var(--primary-emerald)',
+                        display: 'flex', 
+                        alignItems: 'center', 
+                        justifyContent: 'center', 
+                        color: 'var(--primary-emerald)', 
+                        marginBottom: '16px' 
+                      }}
+                    >
+                      <IconComp size={22} />
+                    </div>
+                    <h4 style={{ color: '#fff', fontSize: '1.15rem', marginBottom: '8px' }}>{iq.title}</h4>
+                    <p style={{ color: 'var(--text-muted)', fontSize: '0.86rem', lineHeight: '1.55' }}>{iq.desc}</p>
+                  </div>
+
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--primary-emerald)', fontWeight: 700, fontSize: '0.85rem' }}>
+                    Inquire Now <ArrowRight size={14} />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 }
